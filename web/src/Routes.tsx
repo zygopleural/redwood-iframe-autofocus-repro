@@ -6,16 +6,18 @@
 //
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
-import { Router, Route } from '@redwoodjs/router'
+import HomePage from 'src/pages/HomePage/HomePage'
 
-const Routes = () => {
+const Router = () => {
   return (
-    <Router>
-      <Route path="/" page={HomePage} name="home" />
-      <Route notfound page={NotFoundPage} />
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default Routes
+export default Router
